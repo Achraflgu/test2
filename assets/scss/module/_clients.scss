@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    #Client
+\*------------------------------------*/
+
+.clients{
+    .client {
+        @include transition(all 0.35s);
+        img {
+            max-width: 100%;
+            width: auto !important;
+            @include transition(all 0.35s);
+            opacity: .4;
+            margin-right:auto;
+            margin-left:auto;
+            text-align:center;
+            display:inline-block;
+            &:hover{
+                opacity: 1
+            }
+        }
+    }
+}
+/* clients #1 */
+.clients-1{
+    padding:90px 0 20px 0;
+}
+
+/* clients #2 */
+
+.clients-2 {
+    ul{
+        li {
+            display: inline-block;
+            padding: 0 15px;
+        }
+    }
+}

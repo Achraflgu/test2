@@ -1,0 +1,159 @@
+/*------------------------------------*\
+    #SOON
+\*------------------------------------*/
+/* jQuery Countdown styles 2.0.0. */
+
+.countdown-rtl {
+    direction: rtl;
+}
+
+.countdown-row {
+    display: inline-block;
+}
+
+.countdown-section {
+    position: relative;
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin-right: 15px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.countdown-amount {
+    font-family: $font-body;
+    color: $color-black;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.countdown-period {
+    font-family: $font-body;
+    color: $color-heading;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: capitalize;
+    font-style: italic;
+    display: inline-block;
+}
+
+.page-soon {
+    padding: 180px 0 0 0;
+    .heading {
+        margin-top: 200px;
+        margin-right: 40px;
+        padding-right: 20px;
+        border-right: 2px solid $color-black;
+        text-align: right
+    }
+
+    .heading-2 {
+        .heading--desc {
+            color: #555555;
+            font-size: 13px;
+            text-transform: uppercase;
+            line-height: 30px;
+            letter-spacing: 4px;
+        }
+    }
+
+    .countdown-section:first-of-type {
+        display: block;
+        .countdown-amount {
+            font-size: 200px;
+            color: $color-theme;
+            font-family: $font-heading;
+            font-weight: 500;
+        }
+
+        .countdown-period {
+            vertical-align: top;
+            margin-top: 30px;
+        }
+    }
+
+    form {
+
+        margin: 150px 0;
+
+        .form--heading {
+            h5 {
+                font-size: 30px;
+                margin-bottom: 19px;
+            }
+            p {
+                font-size: 15px;
+                font-weight: 700;
+                margin-bottom: 24px;
+            }
+            
+        }
+
+        .input--wrapper {
+            position: relative;
+
+            .form-control {
+                height: 40px;
+                border-radius: 40px;
+                background-color: #ebebeb;
+                border: none;
+                padding: 0 25px;
+                font-size: 15px;
+                color: $color-body;
+                margin-bottom: 0;
+            }
+
+            button {
+                position: absolute;
+                top: 8px;
+                right: 12px;
+                font-size: 16px;
+                color: $color-black;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                &:hover {
+                    color: $color-theme;
+                }
+            }
+        }        
+    }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .page-soon {
+        padding-top: 150px;
+
+        .heading {
+            margin-top: 0;
+            margin-right: 0;
+            padding: 0;
+            border: none;
+            text-align: center;
+        }
+
+        .countdown-section {
+            padding: 0 10px;
+        }
+
+        .form--heading ,
+        .countdown {
+            text-align: center;
+        }
+
+        .countdown-section:first-of-type .countdown-amount {
+            font-size: 100px;
+        }
+    }
+ 
+    .countdown-amount {
+        font-size: 20px;
+    }
+}

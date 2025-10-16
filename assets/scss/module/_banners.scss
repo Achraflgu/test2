@@ -1,0 +1,530 @@
+/*------------------------------------*\
+    #Interactive Banners
+\*------------------------------------*/
+
+/* Interactive Banner #1 */
+
+.banner-panel {
+    position: relative;
+
+    .panel--content {
+        position: relative;
+        padding-left: 100px;
+    }
+
+    .num {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $color-gray-2;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        font-family: $font-heading;
+        writing-mode: vertical-rl;
+        @include prefix(transform, rotate(180deg), moz webkit);
+    }
+
+    h5 {
+        color: $color-black;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 12px;
+        font-weight: 700;
+        color: $color-theme;
+        line-height: 20px;
+        margin-bottom: 11px;
+        letter-spacing: 2px;
+    }
+    li {
+        font-size: 15px;
+        line-height: 28px;
+        color: $color-gray;
+    
+        a {
+            color: $color-gray;
+    
+            &:hover{
+                color: $color-theme;
+            }
+        }
+    }
+    
+}
+
+/* Interactive Banner #2 */
+
+.interactive-2 {
+    .banner-panel {
+        padding-top: 27px;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100px;
+            width: 50px;
+            height: 2px;
+            background-color: #252525;
+        }
+
+        h5 {
+            font-size: 18px;
+            color: $color-body;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+/* Interactive Banner #3 */
+
+.interactive-3{
+    .banner-panel{
+        &:before {
+            background-color: $color-theme;
+        }
+
+        h5 {
+            color: $color-black;
+            margin-bottom: 16px;
+        }
+
+        h6 {
+            font-size: 12px;
+            font-family: $font-body;
+            letter-spacing: 3px;
+            color: $color-theme;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            color: $color-body;
+            line-height: 26px;
+            margin-bottom: 0;
+            letter-spacing: 0;
+        }
+
+        h6+p {
+            margin-top: 21px;
+        }
+        
+    }
+}
+
+/* Interactive Banner #4 */
+
+.interactive-4 {
+    padding: 180px 0;
+
+    .banner-panel{
+        &:before {
+            background-color: #8fb5c6;
+        }
+
+        h5,
+        h6,
+        p,
+        .num {
+            color: $color-white;
+        }
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 991px) {
+    .interactive-4 {
+        padding: 90px 0;
+    }
+}
+
+/* Banner Image */
+.banner-img-hover{
+    .banner--img{
+        overflow: hidden;
+        img{
+            @include transition(all 1.5s ease);
+            &:hover{
+                @include prefix(transform,scale(1.05) rotate(1deg), moz webkit);
+            }
+        }
+    }
+}
+
+/* banner #1 */
+
+.banner-1{
+    .product-item {
+        padding-top: 70px;
+    }
+
+    .banner--content {
+        position: absolute;
+        top: 50%;
+        right: -300px;
+        z-index: 2;
+        max-width: 500px;
+        @include prefix(transform,translateY(-50%), moz webkit);
+        .btn {
+            width: 200px;
+            height: 50px;
+            line-height: 48px;
+            font-size: 12px;
+        }
+    }
+
+    .banner--subtitle{
+        p {
+            font-size: 12px;
+            font-weight: 700;
+            color: $color-theme;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .banner--title {
+    h3 {
+    font-size: 72px;
+    line-height: 72px;
+    margin-bottom: 37px;
+        a {
+            color: $color-black;
+            &:hover {
+                color: $color-theme;
+            }
+        }
+    } 
+}
+    
+}
+
+
+
+.banner-1 {
+    .carousel-dots {
+        margin-top: 0;
+    }
+
+    .product--hover {
+        .product--action {
+            .btn {
+                width: 200px;
+            }
+
+            a {
+                margin-right: 8px;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .contact--area {
+        padding-top: 120px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28px;
+            font-family: $font-heading;
+        }
+
+        li {
+            font-size: 15px;
+            color: $color-body;
+            font-weight: 700;
+            line-height: 33px;
+            font-family: $font-heading;
+        }
+
+        h6 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+
+            span {
+                color: $color-theme;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 26px;
+        } 
+    }
+
+    .newsletter--form {
+        position: relative;
+        max-width: 370px;
+
+        .form-control {
+            background-color: #f1f8fc;
+            border: none;
+            border-radius: 40px;
+            color: $color-body;
+            font-size: 14px;
+            line-height: 40px;
+            height: 40px;
+            margin-bottom: 0;
+            padding-left: 15px;
+            padding-right: 40px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                line-height: 40px;
+                color: $color-black;
+                font-size: 16px;
+                font-weight: 600;
+                height: 40px;
+                position: absolute;
+                top: 0;
+                right: 10px;
+                cursor: pointer;
+            }
+            
+        }
+    }
+
+    .carousel-navs {
+        .owl-nav {
+            [class*=owl-] {
+                top: 50%;
+                left: auto;
+                right: 30px;
+                @include prefix(transform,rotate(-90deg), moz webkit);
+                height: 60px;
+                width: 60px;
+                color: #d7d7d7;
+                margin: 0;
+                &:hover {
+                    color: $color-black;
+                }
+            }
+
+            .owl-next {
+                margin-top: -60px;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 1px;
+                    top: 50%;
+                    height: 20px;
+                    margin-top: -12px;
+                    background-color: $color-black;
+                }
+            }
+        }
+    }    
+}
+
+/* Banner #2 */
+
+.banner-2 {
+    .banner--content {
+        position: static;
+        max-width: 700px;
+        margin: auto;
+        @include prefix(transform,translateY(0), moz webkit);
+    }
+
+    .slide-item {
+        height: 100vh;
+    }
+
+    .banner--subtitle{
+        p{
+            color: $color-white;
+        }
+    }
+
+    .banner--title {
+        h3{
+            a {
+                color: $color-white;
+            }
+
+            span {
+                color: $color-theme;
+            }
+            
+        }
+    }
+
+    .banner--content {
+        .btn--vertical {
+            width: 60px;
+            height: 130px;
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            border: 1px solid $color-white;
+            color: $color-white;
+            font-size: 11px;
+            line-height: 58px;
+            letter-spacing: 10px;
+        }
+    
+        .btn--vertical:hover {
+            background-color: $color-theme;
+            border-color: $color-theme;
+        }
+    }
+
+    .carousel-navs{
+        .owl-nav{
+            [class*=owl-]{
+                &:hover {
+                    color: $color-theme;
+                }
+            }
+
+            .owl-next{
+                &:after {
+                    background-color: $color-theme;
+                }
+            }
+        }
+    }
+
+    .carousel-dots{
+        .owl-dots{
+
+            counter-reset: slides-num;
+            position: absolute;
+            bottom: 70px;
+            left: 70px;
+            margin-top: 0;
+            @include prefix(transform,rotate(-90deg), moz webkit);
+
+            &:after {
+                content: "/ "counter(slides-num);
+                display: inline-block;
+                font-size: 14px;
+                vertical-align: middle;
+                font-family: $font-heading;
+                color: $color-body;
+                padding-left: 40px;
+            }
+
+            .owl-dot{
+
+                display: inline-block;
+                counter-increment: slides-num;
+
+                span {
+                    height: auto;
+                    width: auto;
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .owl-theme {
+        .owl-dots{
+            .owl-dot{
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .carousel-navs{
+        .owl-dots{
+            .owl-dot{
+                span {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .owl-dot{
+        &.active{
+            &:before {
+                content: counter(slides-num);
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 60px;
+                color: $color-white;
+                font-family: $font-heading;
+                font-weight: 700;
+                position: absolute;
+                top: -8px;
+                left: 0;
+                line-height: 1;
+            }
+        }
+    }
+
+    .carousel-navs{
+        .owl-dots {
+            width: auto;
+        }
+    }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .banner-panel {
+        margin-bottom: 30px;
+
+        .panel--content {
+            padding-left:80px;
+        }
+    }
+
+    .banner-1 {
+        .banner--content {
+            width: 100%;
+            right: 0;
+            left: 30px;
+        }
+
+        .banner--title {
+            h3 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .interactive-2{
+        .banner-panel{
+            &:before{
+                left:80px;
+            }
+        }
+    }
+
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .banner-panel {
+        margin-bottom: 30px;
+    }
+
+    .banner-1 {
+        .banner--content {
+            width: 100%;
+            right: 0;
+            left: 30px;
+        }
+    }
+}

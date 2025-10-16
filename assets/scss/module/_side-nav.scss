@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    #Side Nav
+\*------------------------------------*/
+.fixed-side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 130px;
+    z-index: 3;
+    padding: 30px 20px;
+    text-align: center;
+
+    .module{
+       &.pull-left {
+            float: none;
+        } 
+
+        .module-box {
+            right: auto;
+            left: 0;
+        }
+
+        .module-icon {
+            margin: 0;
+        }
+
+        .module-currency,
+        .module-lang{
+
+            text-align: left;
+
+            .module-icon {
+                line-height: 30px;
+            }
+        }
+    }
+
+    .module-dropdown-menu {
+        top: 10px;
+        left: 55px;
+        background-color: white;
+        @include prefix(transform,translateX(-10%) translateY(0px), moz webkit);
+
+        .dropdown-item {
+            border-bottom: 0;
+
+            &:hover {
+                color: $color-theme;
+            }   
+        }
+    }
+
+    .module-active{
+        .module-dropdown-menu {
+            @include prefix(transform,v, moz webkit);
+        }
+    }
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) and (max-width : 991px) {
+    .fixed-side-nav {
+        position: static;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 0;
+
+        > div {
+            margin-bottom: 30px !important;
+        }
+
+        .module-lang {
+            margin-right: 20px;
+        }
+    }
+}

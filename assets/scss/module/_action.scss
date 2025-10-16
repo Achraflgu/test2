@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    #Call To Action
+\*------------------------------------*/
+
+.cta {
+    h3 {
+        font-size: 72px;
+        line-height:1.2;
+        color: $color-white;
+        margin-bottom: 51px;
+        span {
+            color: $color-theme;
+        }
+    }
+
+    p {
+        color: $color-theme;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-family: $font-heading;
+    }
+
+    .btn {
+        width: 200px;
+        height: 45px;
+        line-height: 43px;
+        background-color: $color-black;
+        border-color: $color-black;
+
+        &:hover {
+            background-color: $color-white;
+            border-color: $color-white;
+            color: $color-black;
+        }
+    }
+    
+}
+
+/* CTA #1 */
+
+.cta-1 {
+    padding: 245px 0 250px;
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+
+    .cta {
+        h3 {
+            font-size: 46px;
+        }
+    }
+
+    .cta-1 {
+        padding: 120px 0;
+    }
+}

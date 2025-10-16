@@ -1,0 +1,222 @@
+/*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-control {
+    color: $color-black;
+    font-family: $font-body;
+    font-size: 15px;
+    font-weight: 400;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    padding-left: 5px;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 0;
+    @include prefix(box-shadow, none, moz webkit);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.form-control:focus {
+     @include prefix(box-shadow, none, moz webkit);
+    background-color: inherit;
+    border-bottom-color: $color-theme;
+}
+
+.form-control:focus .form-group:before {
+    width: 100%;
+}
+
+/* Placeholder */
+
+.form-control::-webkit-input-placeholder {
+    color: #959595;
+    text-transform: capitalize;
+}
+
+.form-control:-moz-placeholder {
+    color: #959595;
+    text-transform: capitalize;
+}
+
+.form-control::-moz-placeholder {
+    color: #959595;
+    text-transform: capitalize;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #959595;
+    text-transform: capitalize;
+}
+
+.select--box {
+    position: relative;
+}
+
+.select--box i {
+    position: absolute;
+    font-size: 16px;
+    right: 20px;
+    top: 14px;
+    z-index: 1;
+    pointer-events: none;
+    cursor: pointer;
+    color: #e1e1e1;
+}
+
+
+
+/* Input Checkbox */
+
+.input-checkbox .label-checkbox {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.label-checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 18px;
+    z-index: 2;
+    padding-left: 30px;
+}
+
+.label-checkbox input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.check-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background: transparent;
+    border: 1px solid #bebebe;
+    border-radius: 50%;
+}
+
+.label-checkbox input:checked ~ .check-indicator {
+    background: transparent;
+}
+
+.check-indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.label-checkbox .check-indicator:after {
+
+    position: absolute;
+    display: none;
+    left: 3px;
+    top: 3px;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: $color-theme;
+
+}
+
+.label-checkbox input:checked ~ .check-indicator:after {
+    display: block;
+}
+
+
+
+
+/* Input Radio */
+
+.label-radio {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    color: $color-black;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.label-radio input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.radio-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background: $color-white;
+    border: 1px solid #bebebe;
+    border-radius: 50%;
+}
+
+.label-radio input:checked ~ .radio-indicator {
+    background: $color-white;
+}
+
+.label-radio:hover input:not([disabled]):checked ~ .radio-indicator,
+.label-radio input:checked:focus ~ .radio-indicator {
+    background: $color-white;
+}
+
+.radio-indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 3px;
+    top: 3px;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: $color-theme;
+}
+
+.label-radio input:checked ~ .radio-indicator:after {
+    display: block;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.form-inline{
+    display: inline-block;
+}
+.form-inline .form-group{
+    display: inline-block;
+}
+
+form .btn i{
+    margin-left: 15px;
+}

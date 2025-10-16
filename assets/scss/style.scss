@@ -1,0 +1,79 @@
+//Base rules
+@import "base/vars";
+@import "base/mixins";
+@import "base/base";
+
+//Layout rules
+@import "layout/typography";
+@import "layout/color";
+@import "layout/align";
+@import "layout/grid";
+@import "layout/blockquotes";
+@import "layout/background";
+@import "layout/breadcrumb";
+@import "layout/buttons";
+@import "layout/forms";
+@import "layout/icons";
+@import "layout/lists";
+@import "layout/media";
+@import "layout/tabs";
+@import "layout/accordion";
+@import "layout/pagination";
+@import "layout/alert";
+@import "layout/backtop";
+@import "layout/range";
+@import "layout/icon-box";
+@import "layout/misc";
+@import "layout/modals";
+@import "layout/tables";
+
+//Module rules
+@import "module/heading";
+@import "module/loading";
+@import "module/header";
+@import "module/menu";
+@import "module/menu-max479";
+@import "module/menu-max767";
+@import "module/menu-max991";
+@import "module/menu-max1200";
+@import "module/menu-min992";
+@import "module/menu-min1200";
+@import "module/hamburger";
+@import "module/module";
+@import "module/testimonial";
+@import "module/feature";
+@import "module/action";
+@import "module/counters";
+@import "module/blog";
+@import "module/categories";
+@import "module/contact";
+@import "module/sidebar";
+@import "module/footer";
+@import "module/404";
+@import "module/soon";
+@import "module/clients";
+@import "module/skills";
+@import "module/video";
+@import "module/newsletter";
+@import "module/carousel";
+@import "module/divider";
+@import "module/banners";
+@import "module/side-nav";
+@import "module/services";
+@import "module/about";
+@import "module/products";
+@import "module/register";
+@import "module/page-title";
+@import "module/collection";
+@import "module/instagram";
+@import "module/deals";
+@import "module/slider";
+@import "module/popup-modal";
+@import "module/landing";
+//State rules
+@import "state/layout-boxed";/* To active Boxed Layout */
+//@import "state/layout-dark";/* To active Dark Version */
+@import "state/layout-bordered";/* To active bordered Version */
+@import "state/layout-split";/* To active split Version */
+//@import "state/layout-rtl";/* To active split Version */
+

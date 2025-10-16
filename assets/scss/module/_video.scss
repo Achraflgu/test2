@@ -1,0 +1,78 @@
+/*------------------------------------*\
+	#Video
+\*------------------------------------*/
+.video-section {
+
+    height: 800px;
+
+    .video--button {
+        height: 800px;
+    }
+}
+
+.video--content {
+    .video--button {
+        .popup-video {
+            width: 76px;
+            height: 76px;
+            line-height: 76px;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            background-color: $color-theme;
+            border-radius: 50%;
+            i {
+                font-size: 22px;
+                line-height: 73px;
+                color: $color-white;
+            
+            }
+        }
+
+        .player-bordered {
+            background-color: transparent;
+            border: 2px solid $color-theme;
+
+            i {
+                color: $color-theme;
+            }
+
+            &:hover {
+                background-color: $color-theme;
+                border: 2px solid $color-theme;
+
+                i {
+                    color: $color-white;
+                }
+                
+            }
+        }
+    }
+}
+
+
+.video-1 {
+    .video--button {
+        height: 780px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .video-1 {
+        .video--button {
+            height: 400px;
+        }
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .video-1 {
+        .video--button {
+            height: 600px;
+        }
+    }
+}

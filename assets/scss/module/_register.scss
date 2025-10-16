@@ -1,0 +1,104 @@
+/*------------------------------------*\
+    #Register & login
+\*------------------------------------*/
+
+.register-login {
+    .register-title {
+        margin-bottom: 33px;
+
+        h4 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }   
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+
+    .form-control {
+        background-color: #f6f7fb;
+        border: none;
+        font-size: 15px;
+        color: $color-gray;
+        font-weight: 400;
+        padding: 0 21px;
+        height: 45px;
+        margin-bottom: 0;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        text-transform: capitalize;
+    
+        &::-webkit-input-placeholder {
+            color: $color-gray;
+        }
+        
+        &::-moz-placeholder {
+            color: $color-gray;
+        }
+        
+        &::-moz-placeholder {
+            color: $color-gray;
+        }
+        
+        &::-ms-input-placeholder {
+            color: $color-gray;
+        }
+    }
+    
+}
+
+.forget--password {
+    display: inline-block;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.social--login {
+    .title {
+        font-size: 14px;
+        font-weight: 700;
+        display: inline-block;
+        margin-right: 20px;
+        text-transform: uppercase;
+        line-height: 40px;
+    }
+
+    a {
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        color: #959595;
+        display: inline-block;
+        margin-right: 3px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-theme;
+            color: $color-white;
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .social--login{
+        a{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+    .forget--password{
+        font-size: 14px;
+        margin-left: 20px;
+    }
+    
+}

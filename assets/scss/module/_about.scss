@@ -1,0 +1,124 @@
+/*------------------------------------*\
+    #About
+\*------------------------------------*/
+
+.about {
+    .about--img,
+    .about--text {
+        position: relative
+    }
+
+    .about--text {
+        margin-bottom: 50px;
+        p {
+            font-size: 18px;
+            line-height: 28px;
+            span {
+                color: $color-theme;
+                font-weight: 900;
+            }
+    
+            &:first-of-type {
+                margin-bottom: 29px;
+            }
+    
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            
+        }
+    }
+    
+    .about--signature {
+        color: $color-theme;
+        letter-spacing: 3px;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+        font-family: $font-body;
+        text-transform: uppercase;
+        span {
+            position: relative;
+            color: $color-body;
+            font-weight: 400;
+            padding-left: 12px;
+            &:before {
+                content: "-";
+                position: absolute;
+                top: 2px;
+                left: 3px;
+            }
+        }
+    }
+    
+}
+
+/* about #2 */
+
+.about-2 {
+    .heading-2 {
+        position: absolute;
+        top: 50%;
+        right: -130px;
+        @include prefix(transform,translateY(-50%), moz webkit);
+        z-index: 2;
+        width: 350px;
+        .heading--subtitle {
+            color: $color-theme;
+        }
+        
+    }
+
+    .about--text {
+        margin-top: 100px;
+    }
+    .feature-panel {
+        margin-bottom: 70px;
+    }
+}
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .about-2 {
+        .heading-2 {
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .about--text {
+            margin-top: 0;
+        }
+
+        .about--text,
+        .about--signature {
+            text-align: center;
+        }
+    }
+    
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .about-2 {
+        .heading-2 {
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .about--text {
+            margin-top: 0;
+        }
+        .about--text,
+        .about--signature {
+            text-align: center;
+        }
+    
+    }
+}

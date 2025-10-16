@@ -1,0 +1,224 @@
+/*----------------------
+        Deals
+----------------------*/
+
+.day-deals {
+    .heading {
+        margin: 140px 0 65px;
+        .heading--title {
+            color: $color-theme;
+        }
+
+        .heading--subtitle {
+            font-size: 13px;
+            color: #555555;
+            letter-spacing: 5px;
+        }
+    }
+
+    .deal--price {
+        font-family: $font-heading;
+        font-size: 30px;
+        font-weight: 700;
+        color: $color-black;
+        margin-bottom: 9px;
+        line-height: 1;
+    }
+
+    .deal--desc {
+        font-family: $font-heading;
+        font-size: 30px;
+        color: $color-black;
+        margin-bottom: 40px;
+        line-height: 1;
+        font-weight: 600;
+    }
+
+    .btn {
+        font-size: 11px;
+        width: 190px;
+        height: 40px;
+        line-height: 38px;
+        border: 1px solid $color-theme;
+        margin-bottom: 155px;
+    }
+
+    .vertical--text {
+        position: absolute;
+        bottom: -17px;
+        right:-26px;
+        z-index: 1;
+        display: inline-block;
+        font-size: 200px;
+        font-weight: 700;
+        font-family: $font-heading;
+        color: $color-white;
+        -webkit-writing-mode: vertical-lr;
+        -moz-writing-mode: vertical-lr;
+        -ms-writing-mode: vertical-lr;
+        -o-writing-mode: vertical-lr;
+        writing-mode: vertical-lr;
+        @include prefix(transform, rotate(180deg), moz webkit);
+    }
+
+    .countdown-amount {
+        font-weight: 300;
+    }    
+}
+
+/*  day deals #2 */
+
+.day-deals-2 {
+    background-color: #f5f5f5;
+
+    .text--container {
+        padding-top: 210px;
+    }
+
+    .btn {
+        background-color: $color-black;
+        border-color: $color-black;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-theme;
+            border-color: $color-theme;
+        }
+    }
+
+    .vertical--text {
+        opacity: .3
+    }
+
+    .heading {
+        position: absolute;
+        top: 210px;
+        right: 0;
+        text-align: right;
+        margin: 0;
+        z-index: 2;
+
+        .heading--subtitle {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: $color-black;
+        }
+
+        .heading--title {
+            color: $color-black;
+        }
+    }
+
+    .btn {
+        margin-bottom: 215px;
+    }
+}
+
+/*  day deals #3 */
+
+.day-deals-3{
+    .heading {
+        margin: 0;
+    }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .day-deals {
+        text-align: center;
+        padding-bottom: 40px !important;
+
+        .heading {
+            margin: 80px 0 40px;
+        }
+
+        .vertical--text {
+            display: none;
+        }
+
+        .btn {
+            margin-bottom: 40px;
+        }
+
+        .owl-carousel {
+            .owl-item{
+                img {
+                    width: auto;
+                    margin: auto;
+                    display: block;
+                    max-width: 300px;
+                }
+            }
+        }
+    
+    }
+
+    .day-deals-2 {
+        .text--container {
+            padding-top: 60px;
+        }
+        .heading {
+            position: static;
+            text-align: center;
+        }
+    }
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .day-deals {
+        padding-bottom: 60px !important;
+
+        .heading {
+            margin: 80px 0 40px;
+        }
+
+        .vertical--text {
+            display: none;
+        }
+
+        .btn {
+            margin-bottom: 40px;
+        }
+    }
+
+    .day-deals 
+
+    .day-deals 
+
+    .day-deals-2 {
+        .text--container {
+            padding-top: 100px;
+        }
+
+        .heading {
+            text-align: left;
+            position: static;
+        }
+
+        .btn {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+/* Medium Screens */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .day-deals {
+        .vertical--text {
+            display: none;
+        }
+    }
+
+    .day-deals-2{
+        .btn {
+            margin-bottom: 50px;
+        }
+    }
+
+}

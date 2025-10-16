@@ -1,0 +1,249 @@
+/*------------------------------------*\
+    #Carousel
+\*------------------------------------*/
+.owl-nav.disabled {
+    display: none;
+}
+
+.owl-dots {
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+}
+
+.owl-carousel {
+    .owl-item{
+        width: 100%;
+        img {
+            width: 100%
+        }
+    }
+}
+
+.carousel-dots {
+    .owl-dots {
+        .owl-dot {
+            cursor: pointer;
+
+            span {
+                height: 11px;
+                width: 11px;
+                border-radius: 50%;
+                background-color: #e1e1e1;
+                margin: 0 4px;
+                border: 2px solid transparent;
+                display: inline-block;
+                cursor: pointer;
+                @include transition(.3s ease);
+            }
+
+            &.active{
+                span {
+                    background-color: transparent;
+                    border-color: $color-theme;
+                }
+            }
+        }
+    }
+
+    &.carousel-white{
+        .owl-dots{
+            .owl-dot{
+                span {
+                    border-color: rgba(255, 255, 255, 0.5);
+                }
+
+                &.active{
+                    span {
+                        background-color: $color-white;
+                        border-color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &.carousel-theme{
+        .owl-dots {
+            .owl-dot{
+                &.active {
+                    span {
+                        background-color: $color-theme;
+                        border-color: $color-theme;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+.carousel-navs{
+    .owl-nav{
+        [class*=owl-] {
+            position: absolute;
+            top: 50%;
+            height: 60px;
+            line-height: 60px;
+            color: $color-heading;
+            font-size: 0;
+            font-weight: 400;
+            text-align: center;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            @include transition(all 0.35s);
+            margin-top: -30px;
+            cursor: pointer;
+            &:hover {
+                color: $color-theme;
+                background-color: transparent;
+            }
+            
+        }
+        .owl-prev {
+            left: 0;
+            &:before {
+                font-family: $awesome;
+                content: "\f053";
+                font-size: 20px;
+            }
+        }
+
+        .owl-next {
+            right: 0;
+            &:before {
+                font-family: $awesome;
+                content: "\f054";
+                font-size: 20px;
+            }
+        }
+        
+    }
+}
+
+
+/* Slider Dots */
+
+.slider-dots {
+    margin-top: 0;
+
+    .owl-dots {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+
+        .owl-dot {
+            span {
+                height: 11px;
+                width: 11px;
+                border-radius: 50%;
+                background-color: $color-white;
+                border: 2px solid rgba(0, 0, 0, .6);
+                margin: 0 4px;
+            }
+
+            &.active {
+                span {
+                     @include prefix(box-shadow, 0 0 0 2px $color-dark3, moz webkit);
+                }
+            }
+            
+        }
+    }
+}
+
+.slider-navs{
+    .owl-nav{
+        [class*=owl-] {
+            position: absolute;
+            top: 50%;
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            margin-top: -30px;
+            color: $color-white;
+            font-size: 0;
+            font-weight: 400;
+            background-color: rgba(27, 26, 26, 0.5);
+            text-align: center;
+            padding: 0;
+            border-radius: 0;
+            @include transition(all 0.35s);
+            cursor: pointer;
+            &:hover {
+                color: #999999;
+                background-color: $color-white;
+            }
+            
+        }
+
+        .owl-next:before,
+        .owl-prev:before {
+            font-family: $awesome;
+            font-size: 25px;
+        }
+
+        .owl-prev {
+            left: 30px;
+            &:before {
+                content: "\f104";
+            }            
+        }
+
+        .owl-next {
+            right: 30px;
+            &:before {
+                content: "\f105";
+            }
+        }
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+
+        .owl-dot {
+            span {
+                background-color: transparent;
+                border: 1px solid $color-white;
+            }
+
+            &.active,
+            &:hover{
+                span {
+                    background: $color-white;
+                }
+            }
+        }
+    }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .slider-navs .owl-nav .owl-prev {
+        left: 0;
+    }
+
+    .slider-navs .owl-nav .owl-next {
+        right: 0;
+    }
+
+    .slider-navs .owl-nav .owl-next:before,
+    .slider-navs .owl-nav .owl-prev:before {
+        font-size: 20px;
+    }
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .slider-navs .owl-nav .owl-next:before,
+    .slider-navs .owl-nav .owl-prev:before {
+        font-size: 30px;
+    }
+}

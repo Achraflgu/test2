@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+.header {
+    height: 100px;
+}
+
+.header-transparent {
+    background-color: transparent;
+}
+
+.header-transparent+.mtop-100,
+.header-transparent+.page-title,
+.header-transparent+.hero,
+.header-transparent+.slider {
+    position: relative;
+    margin-top: -100px;
+}
+
+
+/* Header Bordered */
+.header-bordered .navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header-bordered .navbar.navbar--dark {
+    border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+}
+
+/* Header Logo Brand */
+.header-transparent .navbar-brand .logo {
+    line-height: 100px;
+}
+
+.header-transparent .navbar-brand .logo-dark {
+    display: none;
+}
+
+.logo-centered .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+/* Header Light */
+
+.header-light {
+    background-color: $color-white;
+}
+
+.header-light .navbar .logo-dark {
+    display: inline-block;
+}
+
+.header-light .navbar .logo-light {
+    display: none;
+}
+
+.header-1 {
+    .navbar-brand {
+        min-width: 180px;
+        line-height:100px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) and (max-width : 991px) {
+
+    .logo-centered .navbar .navbar-brand {
+        position: static;
+        transform: translateX(0);
+        margin-left: 15px;
+    }
+
+    .logo-centered .navbar-brand {
+        position: static;
+        transform: translateX(0);
+    }
+
+    .header-2 .module-menu-container,
+    .header-5 .module-menu-container ,
+    .header-7 .module-menu-container,
+    .header-9 .module-menu-container{
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-8 {
+        height: 150px;
+    }
+
+    .header-8 .navbar-expand-lg .navbar-nav {
+        @include prefix(transform,translateX(-50%), moz webkit);
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        width: 100%;
+        height: 89px;
+        justify-content: center;
+    }
+
+}

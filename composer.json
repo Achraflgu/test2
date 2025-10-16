@@ -1,0 +1,16 @@
+{
+    "name": "msport/ecommerce",
+    "description": "MSport E-commerce Platform",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MSport\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

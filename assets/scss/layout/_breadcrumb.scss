@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    #BREADCRUMB
+\*------------------------------------*/
+
+.breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0;
+    border-radius: 0;
+    color: $color-gray;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+    font-family: $font-body;
+    display: block;
+}
+
+.breadcrumb > li {
+    display: inline-block;
+}
+.breadcrumb > li + li:before,
+.breadcrumb > li a {
+    color:$color-gray;
+}
+
+.breadcrumb > .active {
+    color: $color-theme;
+}
+
+.breadcrumb > li + li:before {
+    color: $color-gray;
+    content: "\f061";
+    font-family: $awesome;
+    font-size: 12px;
+        padding: 0 10px;
+}
+
+.breadcrumb > li a:hover {
+    color: $color-theme;
+}

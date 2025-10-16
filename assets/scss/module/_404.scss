@@ -1,0 +1,127 @@
+/*------------------------------------*\
+    #404
+\*------------------------------------*/
+
+.page-404{
+
+    padding:260px 0;
+    h3 {
+        font-size: 200px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0;
+        color: $color-theme;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        font-family: $font-body;
+        font-style: italic;
+        font-size: 36px;
+        line-height: 1;
+        margin-bottom: 100px;
+        letter-spacing: 5px;
+        text-transform: capitalize;
+    }
+
+    p {
+        color: $color-theme;
+        font-size: 18px;
+        margin-bottom: 22px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 700;
+    }
+
+    a {
+        position: relative;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $color-black;
+        letter-spacing: 3px;
+        margin-bottom: 51px;
+        display: inline-block;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $color-black;
+            @include transition( all .4s linear);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: $color-theme;
+            @include transition( all .4s linear);
+        }
+
+        &:hover {
+            color: $color-theme;
+
+            &:after {
+                width: 100%;
+            }
+        }
+        
+    }
+
+    form {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        max-width: 400px;
+
+        .form-control {
+            height: 40px;
+            border-radius: 40px;
+            background-color: #ebebeb;
+            border: none;
+            padding: 0 25px;
+            font-size: 15px;
+            color: $color-body;
+            margin-bottom: 0;
+        }
+
+        button {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 16px;
+            color: $color-black;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-theme;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .page-404 {
+        padding-top: 150px !important;
+        padding-bottom: 150px !important;
+
+        h3 {
+            font-size: 100px;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 22px;
+            letter-spacing: 5px
+        }
+    }
+}

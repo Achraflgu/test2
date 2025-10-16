@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #Counters
+\*------------------------------------*/
+.counter{
+    padding: 60px 0;
+
+    .count-box{
+        .counting {
+            font-family: $font-body;
+            color: $color-heading;
+            font-size: 60px;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .count-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            text-transform: capitalize;
+            letter-spacing: 0.23px;
+        }
+        
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .counter {
+        .count-box {
+            margin-bottom: 20px;
+
+            .counting{
+                font-size:42px;
+            }
+
+            .count-title {
+                font-size:14px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .counter{
+        .count-box {
+            margin-bottom: 20px;
+        }
+    }
+}

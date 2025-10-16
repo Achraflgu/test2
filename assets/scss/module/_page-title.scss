@@ -1,0 +1,221 @@
+/*------------------------------------*\
+    #PAGE-TTILE
+\*------------------------------------*/
+
+.page-title {
+    padding: 0;
+
+    .title {
+        padding: 220px 0 51px;
+
+        .title--heading {
+            margin-bottom: 27px;
+
+            h1 {
+                color: $color-heading;
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 1.2;
+                margin-bottom: 0;
+                font-family: $font-heading;
+                text-transform: capitalize;
+            }
+        }
+
+        .title--desc{
+            p {
+                color: #f9f9f9;
+                font-size: 17px;
+                margin-bottom: 0;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+/* Title #2 */
+
+.page-title {
+    .title-1 {
+        padding: 110px 0 50px;    
+    }
+}
+
+/* Title #2 */
+
+.page-title {
+    .title-2 {
+        .title--heading {
+            margin-bottom: 0;
+        }
+
+        .breadcrumb {
+            margin-bottom: 15px;
+        }
+        
+    }
+}
+
+/* Title #3 */
+
+.page-title {
+    .title-3 {
+        padding: 268px 0 233px;
+    }
+}
+
+/* Title #4 */
+
+.page-title {
+    .title-4 {
+        .title--heading {
+            margin-bottom: 22px;
+            h1 {
+                font-size: 36px;
+            }
+            
+        }
+    }
+}
+
+/* Title #5 */
+
+.page-title {
+    .title-5 {
+        padding: 0;
+        .title--heading{
+            h1 {
+                color: $color-white
+            }
+        }
+    }
+}
+
+
+/* Title #6 */
+
+.page-title{
+    &.page-title-hero{
+        padding: 60px 0 94px;
+        .title {
+            padding: 0;
+        }
+        .title--subheading{
+            p {
+                font-size: 12px;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-family: $font-heading;
+                margin-bottom: 0;
+            }
+        }
+        .title--heading {
+            margin-bottom: 19px;
+            h1 {
+                font-size: 72px;
+                span {
+                    display: block;
+                    color: $color-theme;
+                }
+            }
+        }
+    
+        .title--desc {
+            p {
+                color: $color-body;
+                font-size: 18px;
+                line-height: 28px;
+                padding-right: 15px;
+            }
+        }
+    
+        .cat--links {
+            padding-left: 150px;
+            position: relative;
+            max-width: 400px;
+            &:after {
+                position: absolute;
+                content: "";
+                height: 2px;
+                width: 94px;
+                background-color: $color-theme;
+                top: 15px;
+                left: 0;
+                margin: 0 auto;
+            }
+            li {
+                float: left;
+                width: 50%;
+                a {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: $color-black;
+                    line-height: 30px;
+                    @include transition(all .3s linear);
+                    &:hover {
+                        color: $color-theme;
+                        padding-left: 10px;
+                    }
+                    
+                }
+            }
+        }
+    
+        .social--icons {
+            position: absolute;
+            bottom: 110px;
+            right: -85px;
+            @include prefix(transform,rotate(-90deg), moz webkit);
+            span {
+                display: inline-block;
+                font-weight: 700;
+                font-size: 16px;
+                color: $color-black;
+                padding-right: 15px;
+            }
+    
+            a{
+                &:hover {
+                    color: $color-theme;
+                }
+            }
+            
+        }
+    
+    }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .page-title.title-6 {
+        .cat--links,
+        .title--desc p {
+            margin-bottom: 40px;
+        }
+
+        .social--icons {
+            position: static;
+            bottom: 0;
+            right: 0;
+            @include prefix(transform,rotate(0), moz webkit);
+        }
+
+        .title--heading{
+            h1 {
+                font-size: 50px;
+            }
+        }
+    }
+
+    .page-title.fullscreen {
+        height: 100vh !important;
+    }
+
+    .page-title .title--heading h1 {
+        font-size: 40px;
+    }
+
+}

@@ -1,0 +1,311 @@
+/*------------------------------------*\
+    #Landing Page / Promo Page
+\*------------------------------------*/
+
+/* Landing Hero */
+.landing-hero {
+    padding: 200px 0;
+    position: relative;
+
+    .hero--headline {
+        font-size: 60px;
+        line-height: 75px;
+    }
+
+    .hero--desc {
+        margin-bottom: 33px;
+        padding:0 50px 0 0;
+    }
+
+    .btn{
+        height: 60px;
+        line-height: 58px;
+        font-weight: 700;
+        margin-right: 15px;
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    .landing-hero{
+        padding:120px 0;
+        text-align: center;
+
+        .hero--headline {
+            font-size: 42px;
+            line-height: 55px;
+        }
+
+        .hero--desc {
+            padding: 0
+        }
+
+        .btn{
+            margin:10px 0;
+        }
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+    .landing-hero{
+        padding:190px 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1200px) {
+    .landing-hero{
+        .hero--headline{
+            font-size: 50px;
+            line-height: 65px;
+        }
+        .btn{
+            width: 200px;
+        }
+    }
+}
+/* Landing Demos */
+
+.landing-demos{
+  
+    .portfolio-item {
+    margin-bottom: 47px;
+
+        a{
+            cursor: pointer;
+        }
+
+        h4 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 0;
+        }
+
+        &:hover{
+            h4 {
+                color: $color-theme;
+            }
+        }
+
+        .portfolio-img {
+            position: relative;
+            @include transition(all 0.35s);
+            cursor: pointer;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                @include rounded(6px);
+            }
+            
+
+            &:hover {
+                @include prefix(transform,translateY(-4px), moz webkit);
+                @include prefix(box-shadow, 0px 0px 33px 0px rgba(40, 40, 40, 0.13), moz webkit);
+            }
+        }
+
+        &.portfolio-item-soon{
+            &:hover{
+                h4{
+                    color:white;
+                }
+            }
+
+            .portfolio-img{
+                cursor: auto;
+                &:hover{
+                    @include prefix(box-shadow,none, moz webkit);
+                    @include prefix(transform,translateY(0), moz webkit);
+                }
+            }
+        }
+    }
+
+    .portfolio-bio {
+        padding-top: 26px;
+    }
+    
+}
+
+.landing-demos-shadow{
+    .portfolio-img {
+         @include prefix(box-shadow, 0px 0px 33px 0px rgba(40, 40, 40, 0.06), moz webkit);
+    }
+    
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .landing-demos .portfolio-item-box {
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .landing-demos .portfolio-item-box,
+    .landing-demos .add-sugg {
+        max-width: 370px;
+        margin: 0 auto 30px;
+    }
+}
+/* Landing Facts */
+.landing-counter{
+    padding:120px 0;
+    .heading--subtitle{
+        font-size: 14px;
+        font-family: $font-heading;
+        font-weight: 500;
+    }
+    .count-box {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 30px 20px 30px 30px;
+        @include rounded(6px);
+        color: $color-white;
+        .count-title{
+            font-size: 18px;
+            color: $color-white;
+            font-weight: 500;
+        }
+        .counting {
+            font-size: 42px;
+            color: $color-white;
+            font-weight: 600;
+        }
+    }
+}
+/* Landing Action*/
+.landing-action {
+
+    .container{
+        padding: 150px 0;
+    }
+    
+    p {
+        font-size: 16px;
+        color: $color-white;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 70px;
+        font-style: normal;
+        color: $color-white;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+    }
+
+    .btn {
+        height: 60px;
+        line-height: 58px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+ }
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .landing-action {
+        padding: 90px 0;
+        text-align: center;
+
+        .container{
+            padding:0;
+        }
+
+        h2{
+            font-size:42px;
+            line-height:55px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .landing-action {
+          text-align: center;
+
+          p {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+ @media only screen and (min-width : 992px) and (max-width : 1200px) {
+
+    .landing-action {
+     padding: 90px 0 0 0;
+     text-align: center;
+
+     h2{
+         font-size:52px;
+         line-height:65px;
+     }
+ }
+
+}
+
+/* Landing Features */
+
+.landing-feature{
+    .feature-panel {
+        margin-bottom: 50px;
+        .feature--content {
+            h3 {
+                line-height: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.landing-features{
+    .feature-panel {
+        position: relative;
+        margin-bottom: 40px;
+        .feature--icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: $color-theme;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin-bottom: 0;
+            line-height: 30px;
+        }
+        
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 991px) {
+    .landing-feature{
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+   
+
+    .landing-demos .portfolio-item-box,
+    .landing-demos .add-sugg {
+        max-width: 370px;
+        margin: 0 auto 30px;
+    }
+
+    .landing-action {
+          text-align: center;
+
+          p {
+            margin-bottom: 30px;
+        }
+    }
+
+}
