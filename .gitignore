@@ -1,0 +1,42 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Database files
+*.sql
+*.db
+
+# Logs
+*.log
+logs/
+
+# Cache
+cache/
+tmp/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.backup.*
+*.bak
+
+# Vendor files (if using composer)
+vendor/
+
+# Uploads (optional - you might want to keep some sample images)
+# admin/uploads/*
+# !admin/uploads/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
