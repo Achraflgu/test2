@@ -66,8 +66,11 @@
         <div class="status">
             <h3>System Status</h3>
             <p>✅ Application: Running</p>
-            <p>🔄 Database: Connecting...</p>
+            <p>🔄 Database: <?php echo getenv('DATABASE_URL') ? 'Configured - Connecting...' : 'Not Configured'; ?></p>
             <p>🌐 Environment: <?php echo getenv('RAILWAY_ENVIRONMENT') ? 'Production' : 'Development'; ?></p>
+            <?php if (!getenv('DATABASE_URL')): ?>
+            <p>⚠️ Please add DATABASE_URL environment variable in Railway</p>
+            <?php endif; ?>
         </div>
         
         <p><small>This page will automatically refresh when the database is ready.</small></p>

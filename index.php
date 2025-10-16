@@ -2,6 +2,13 @@
 
 session_start();
 
+// Check if DATABASE_URL is set (Railway environment)
+if (!getenv('DATABASE_URL')) {
+    // No database configured, show maintenance page
+    include("maintenance.php");
+    exit;
+}
+
 // Try to include database connection, redirect to maintenance if it fails
 try {
     include("db_connection.php");
@@ -26,9 +33,15 @@ try {
     exit;
 }
 
-include("header.php");
-include("nav.php");
-
+// If we get here, database is connected, load the main page
+try {
+    include("header.php");
+    include("nav.php");
+} catch (Exception $e) {
+    // If header/nav fails, show maintenance page
+    include("maintenance.php");
+    exit;
+}
 
 ?>
 
