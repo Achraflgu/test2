@@ -1,48 +1,36 @@
 <?php
-
-session_start();
-
-// Check if DATABASE_URL is set (Railway environment)
+// Ultra-simple approach - just show simple page if no database
 if (!getenv('DATABASE_URL')) {
-    // No database configured, show maintenance page
-    include("maintenance.php");
+    include("simple.php");
     exit;
 }
 
-// Try to include database connection, redirect to maintenance if it fails
+// Try to start session and load database
 try {
+    session_start();
     include("db_connection.php");
     
-    // Test the database connection
+    // Test database connection
     if (defined('DB_TYPE') && DB_TYPE === 'postgresql') {
-        // For PostgreSQL, test with a simple query
         $test_query = $conn->query("SELECT 1");
         if (!$test_query) {
-            throw new Exception("Database connection test failed");
+            throw new Exception("Database test failed");
         }
     } else {
-        // For MySQL, test the connection
         if (!$conn || mysqli_connect_error()) {
             throw new Exception("MySQL connection failed");
         }
     }
     
-} catch (Exception $e) {
-    // Database connection failed, show maintenance page
-    include("maintenance.php");
-    exit;
-}
-
-// If we get here, database is connected, load the main page
-try {
+    // If we get here, database is working, try to load main page
     include("header.php");
     include("nav.php");
+    
 } catch (Exception $e) {
-    // If header/nav fails, show maintenance page
-    include("maintenance.php");
+    // Any error, show simple page
+    include("simple.php");
     exit;
 }
-
 ?>
 
 <div class="slider slider-4">
