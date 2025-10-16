@@ -2,7 +2,30 @@
 
 session_start();
 
-include("db_connection.php");
+// Try to include database connection, redirect to maintenance if it fails
+try {
+    include("db_connection.php");
+    
+    // Test the database connection
+    if (defined('DB_TYPE') && DB_TYPE === 'postgresql') {
+        // For PostgreSQL, test with a simple query
+        $test_query = $conn->query("SELECT 1");
+        if (!$test_query) {
+            throw new Exception("Database connection test failed");
+        }
+    } else {
+        // For MySQL, test the connection
+        if (!$conn || mysqli_connect_error()) {
+            throw new Exception("MySQL connection failed");
+        }
+    }
+    
+} catch (Exception $e) {
+    // Database connection failed, show maintenance page
+    include("maintenance.php");
+    exit;
+}
+
 include("header.php");
 include("nav.php");
 
