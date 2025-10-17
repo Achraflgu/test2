@@ -12,10 +12,8 @@ if (isset($_SESSION['customer_email'])) {
     // Get customer ID from database using customer email
     $sql = "SELECT customer_id FROM customers WHERE customer_email = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('s', $customerEmail);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $stmt->execute([$customerEmail]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $customerId = $row['customer_id'];
 
     // Fetch wishlist items for the customer
@@ -24,14 +22,8 @@ if (isset($_SESSION['customer_email'])) {
             INNER JOIN products ON wishlist.product_id = products.product_id
             WHERE wishlist.customer_id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $customerId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $wishlistItems = [];
-
-    while ($row = $result->fetch_assoc()) {
-        $wishlistItems[] = $row;
-    }
+    $stmt->execute([$customerId]);
+    $wishlistItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
 <!-- Page Title #1
