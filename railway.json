@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "php -S 0.0.0.0:$PORT -t MSPORT MSPORT/router.php",
+    "startCommand": "php -S 0.0.0.0:$PORT router.php",
     "healthcheckPath": "/health",
     "healthcheckTimeout": 30,
     "restartPolicyType": "ON_FAILURE",
