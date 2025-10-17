@@ -19,5 +19,8 @@ if(isset($_SESSION['customer_email'])){
     $wishlistItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($wishlistItems);
+} else {
+    // User not logged in, return empty array
+    echo json_encode([]);
 }
 ?>
