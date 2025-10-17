@@ -998,34 +998,6 @@ $('#product-popup .owl-thumbs .owl-thumb-item #thumb-4').attr('src', response.pr
             });
         });
 
-        function checkWishlistItems() {
-            $.ajax({
-                url: 'check_wishlist.php',
-                type: 'GET',
-                success: function (response) {
-                    try {
-                        // Check if response is empty
-                        if (!response.trim()) {
-                            console.warn('Empty response received.');
-                            return;
-                        }
-
-                        var wishlistItems = JSON.parse(response);
-
-                        wishlistItems.forEach(function (item) {
-                            $('.add-to-wishlist[data-product-id="' + item.product_id + '"]').addClass('added');
-                        });
-                    } catch (e) {
-                        console.error('Error parsing JSON:', e);
-                        alert('Error fetching wishlist items. Please try again later.');
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error('AJAX error:', status, error);
-                    alert('Error fetching wishlist items. Please try again later.');
-                }
-            });
-        }
         $('.cart-product-remove').on('click', function (e) {
             e.preventDefault();
 
