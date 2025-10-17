@@ -1,4 +1,10 @@
 <?php
+// Serve ultra-simple page in production to avoid 502 until DB migration is complete
+if (getenv('RAILWAY_ENVIRONMENT')) {
+    include("simple.php");
+    exit;
+}
+
 // Ultra-simple approach - just show simple page if no database
 if (!getenv('DATABASE_URL')) {
     include("simple.php");
