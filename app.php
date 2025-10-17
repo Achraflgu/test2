@@ -23,6 +23,7 @@ switch ($uri) {
         .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         h1 { color: #333; }
         .status { background: #d4edda; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .info { background: #d1ecf1; padding: 10px; border-radius: 5px; margin: 10px 0; }
     </style>
 </head>
 <body>
@@ -31,10 +32,14 @@ switch ($uri) {
         <div class="status">
             <strong>✅ Application Status:</strong> Running successfully on Railway
         </div>
-        <p><strong>Server Time:</strong> ' . date('Y-m-d H:i:s T') . '</p>
-        <p><strong>PHP Version:</strong> ' . phpversion() . '</p>
-        <p><strong>Environment:</strong> ' . (getenv('RAILWAY_ENVIRONMENT') ? 'Production' : 'Development') . '</p>
-        <p><strong>Port:</strong> ' . (getenv('PORT') ?: 'Not set') . '</p>
+        <div class="info">
+            <p><strong>Server Time:</strong> ' . date('Y-m-d H:i:s T') . '</p>
+            <p><strong>PHP Version:</strong> ' . phpversion() . '</p>
+            <p><strong>Environment:</strong> ' . (getenv('RAILWAY_ENVIRONMENT') ? 'Production' : 'Development') . '</p>
+            <p><strong>Port:</strong> ' . (getenv('PORT') ?: '3000 (hardcoded)') . '</p>
+            <p><strong>Server Port:</strong> ' . ($_SERVER['SERVER_PORT'] ?? 'Not set') . '</p>
+            <p><strong>Host:</strong> ' . ($_SERVER['HTTP_HOST'] ?? 'Not set') . '</p>
+        </div>
         <hr>
         <h3>Available Endpoints:</h3>
         <ul>
@@ -52,7 +57,9 @@ switch ($uri) {
             'status' => 'ok',
             'time' => date('Y-m-d H:i:s'),
             'php_version' => phpversion(),
-            'environment' => getenv('RAILWAY_ENVIRONMENT') ?: 'development'
+            'environment' => getenv('RAILWAY_ENVIRONMENT') ?: 'development',
+            'port' => getenv('PORT') ?: '3000',
+            'server_port' => $_SERVER['SERVER_PORT'] ?? 'not_set'
         ]);
         break;
         
