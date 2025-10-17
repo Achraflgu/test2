@@ -85,3 +85,4 @@ if (!defined("DB_TYPE")) {
     define("DB_TYPE", $config['type']);
 }
 ?>
+

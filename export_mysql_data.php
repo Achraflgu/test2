@@ -125,3 +125,4 @@ echo "2. Run the schema creation from migrate_to_postgres.php\n";
 echo "3. Import this data file into your PostgreSQL database\n";
 echo "4. Update your application's database connection\n";
 ?>
+

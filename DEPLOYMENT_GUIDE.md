@@ -181,3 +181,4 @@ railway variables
 ---
 
 **Note**: This deployment setup is optimized for portfolio/demo purposes. For production e-commerce, consider additional security measures, monitoring, and backup strategies.
+
