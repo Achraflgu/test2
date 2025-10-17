@@ -238,6 +238,11 @@ switch ($uri) {
         include 'health.php';
         break;
         
+    case '/db-status':
+    case '/db-status.php':
+        include 'db-status.php';
+        break;
+        
     case '/test':
         header('Content-Type: text/html');
         echo '<h1>Test Page</h1><p>PHP is working correctly!</p><p>Time: ' . date('Y-m-d H:i:s') . '</p>';
