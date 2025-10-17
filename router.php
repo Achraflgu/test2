@@ -17,7 +17,7 @@ if ($uri === '/favicon.ico') {
     exit;
 }
 
-$appRoot = __DIR__ . '/MSPORT';
+$appRoot = __DIR__;
 
 // Force root to simple fallback to eliminate 502s
 if ($uri === '/') {
@@ -26,7 +26,7 @@ if ($uri === '/') {
     exit;
 }
 
-// Serve static files under MSPORT if they exist
+// Serve static files if they exist
 $path = realpath($appRoot . $uri);
 if ($path && str_starts_with($path, $appRoot) && is_file($path)) {
     return false; // let the built-in server serve the file directly
