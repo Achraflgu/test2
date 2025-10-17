@@ -1,5 +1,5 @@
 <?php
-// Router for PHP built-in server
+// Root-level router for PHP built-in server
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
 
 // Health endpoints
@@ -10,18 +10,28 @@ if ($uri === '/health' || $uri === '/health.php') {
     exit;
 }
 
-// Favicon: return 204 No Content to avoid 502s
+// Favicon: return 204 No Content
 if ($uri === '/favicon.ico') {
     header('Content-Type: image/x-icon');
     http_response_code(204);
     exit;
 }
 
-// Serve existing static files normally
-$path = __DIR__ . $uri;
-if (php_sapi_name() === 'cli-server' && is_file($path)) {
-    return false; // let server serve the file
+$appRoot = __DIR__ . '/MSPORT';
+
+// Force root to simple fallback to eliminate 502s
+if ($uri === '/') {
+    chdir($appRoot);
+    require $appRoot . '/simple.php';
+    exit;
 }
 
-// Fallback to the main index
-require __DIR__ . '/index.php';
+// Serve static files under MSPORT if they exist
+$path = realpath($appRoot . $uri);
+if ($path && str_starts_with($path, $appRoot) && is_file($path)) {
+    return false; // let the built-in server serve the file directly
+}
+
+// Fallback to the main application index
+chdir($appRoot);
+require $appRoot . '/index.php';
