@@ -35,13 +35,16 @@
                                         <?php
                                         // Fetch categories from the database
                                         $category_sql = "SELECT * FROM productcategories WHERE pcategory_status = 1";
-                                        $category_result = mysqli_query($conn, $category_sql);
-
-                                        if (mysqli_num_rows($category_result) > 0) {
-                                            while ($category_row = mysqli_fetch_assoc($category_result)) {
-                                                $pcategory_id = $category_row['pcategory_id'];
-                                                $pcategory_name = $category_row['pcategory_name'];
-                                                $pcategory_photo = $category_row['pcategory_photo'];
+                                        
+                                        try {
+                                            $category_result = $conn->query($category_sql);
+                                            $category_rows = $category_result->fetchAll(PDO::FETCH_ASSOC);
+                                            
+                                            if (count($category_rows) > 0) {
+                                                foreach ($category_rows as $category_row) {
+                                                    $pcategory_id = $category_row['pcategory_id'];
+                                                    $pcategory_name = $category_row['pcategory_name'];
+                                                    $pcategory_photo = $category_row['pcategory_photo'];
                                         ?>
                                                 <div class="col-md-12 col-lg-5ths">
                                                     <a href="shop.php?category=<?php echo $pcategory_id; ?>">
@@ -56,8 +59,9 @@
                                             INNER JOIN (
                                             SELECT 0 AS digit UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) AS n
                                             WHERE pcategory_id = $pcategory_id AND product_keywords LIKE '%f-%'";
-                                                                    $subcategory_result = mysqli_query($conn, $subcategory_sql);
-                                                                    while ($subcategory_row = mysqli_fetch_assoc($subcategory_result)) {
+                                                                    $subcategory_result = $conn->query($subcategory_sql);
+                                                                    $subcategory_rows = $subcategory_result->fetchAll(PDO::FETCH_ASSOC);
+                                                                    foreach ($subcategory_rows as $subcategory_row) {
                                                                         // Extract the subcategory name and remove any quotes
                                                                         $subcategory_name = trim($subcategory_row['subcategory'], '"');
                                                                         // If subcategory starts with 'f-', remove it
@@ -70,8 +74,8 @@
                                                                                 </a>
                                                                             </li>
                                                                     <?php
-                                                                        }
-                                                                    }
+                                                                                }
+                                                                            }
                                                                     ?>
                                                                 </ul>
                                                             </div>
@@ -82,9 +86,12 @@
                                                     </a>
                                                 </div>
                                         <?php
+                                                }
+                                            } else {
+                                                echo '<li>No categories found</li>';
                                             }
-                                        } else {
-                                            echo '<li>No categories found</li>';
+                                        } catch (Exception $e) {
+                                            echo '<li>Error loading categories</li>';
                                         }
                                         ?>
                                     </div>
@@ -152,9 +159,9 @@
                                     // Replace 'your_database_connection' with your database connection code
                                     $customer_email = $_SESSION['customer_email'];
                                     $sql = "SELECT customers_photo FROM customers WHERE customer_email = '$customer_email'";
-                                    $result = mysqli_query($conn, $sql);
-                                    $row = mysqli_fetch_assoc($result);
-                                    $customers_photo = $row['customers_photo'];
+                                    $result = $conn->query($sql);
+                                    $row = $result->fetch(PDO::FETCH_ASSOC);
+                                    $customers_photo = $row ? $row['customers_photo'] : '';
                                     ?>
                                     <div class="dropdown">
                                         <button class="dropdown-toggle" type="button" id="myAccountDropdown" data-toggle="dropdown">
