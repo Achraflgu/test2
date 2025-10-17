@@ -1,6 +1,7 @@
 <?php
 // Production-ready database connection with environment variables
 
+if (!function_exists('parseDatabaseUrl')) {
 function parseDatabaseUrl(string $dbUrl): array {
     $url = parse_url($dbUrl);
     $query = parse_url($dbUrl, PHP_URL_QUERY) ?: '';
@@ -16,7 +17,9 @@ function parseDatabaseUrl(string $dbUrl): array {
         'type' => 'postgresql',
     ];
 }
+}
 
+if (!function_exists('buildPgDsn')) {
 function buildPgDsn(array $cfg): string {
     $sslmode = $cfg['params']['sslmode'] ?? 'require';
     $connectTimeout = $cfg['params']['connect_timeout'] ?? 5; // seconds
@@ -31,7 +34,9 @@ function buildPgDsn(array $cfg): string {
 
     return 'pgsql:' . implode(';', $parts);
 }
+}
 
+if (!function_exists('getDatabaseConfig')) {
 function getDatabaseConfig(): array {
     if (getenv('RAILWAY_ENVIRONMENT') || getenv('DATABASE_URL')) {
         $dbUrl = getenv('DATABASE_URL');
@@ -60,7 +65,9 @@ function getDatabaseConfig(): array {
         'type' => 'mysql',
     ];
 }
+}
 
+if (!function_exists('getConnection')) {
 function getConnection() {
     $config = getDatabaseConfig();
 
@@ -93,6 +100,7 @@ try {
     // Let callers decide how to handle; expose a flag
     $conn = null;
     define('DB_CONNECTION_ERROR', $e->getMessage());
+}
 }
 
 $config = getDatabaseConfig();
