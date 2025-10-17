@@ -1,5 +1,5 @@
 <?php
-// Ultra-minimal router to eliminate 502 errors
+// Ultra-minimal router to isolate 502 issues
 $uri = $_SERVER['REQUEST_URI'] ?? '/';
 
 // Immediate response for root path - no includes, no dependencies
