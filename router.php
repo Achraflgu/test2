@@ -17,12 +17,19 @@ if ($uri === '/favicon.ico') {
     exit;
 }
 
+// Test endpoint
+if ($uri === '/test') {
+    header('Content-Type: text/html; charset=utf-8');
+    echo '<h1>Test Page</h1><p>PHP Server Working!</p><p>Time: ' . date('Y-m-d H:i:s') . '</p>';
+    exit;
+}
+
 $appRoot = __DIR__;
 
-// Force root to simple fallback to eliminate 502s
-if ($uri === '/') {
+// For now, always serve the simple page to avoid 502 errors
+if ($uri === '/' || $uri === '/index.php') {
     chdir($appRoot);
-    require $appRoot . '/simple.php';
+    include $appRoot . '/simple.php';
     exit;
 }
 
@@ -32,6 +39,6 @@ if ($path && str_starts_with($path, $appRoot) && is_file($path)) {
     return false; // let the built-in server serve the file directly
 }
 
-// Fallback to the main application index
+// Default fallback - serve simple page
 chdir($appRoot);
-require $appRoot . '/index.php';
+include $appRoot . '/simple.php';
