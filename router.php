@@ -24,6 +24,13 @@ if ($uri === '/test') {
     exit;
 }
 
+// Diagnostic endpoint
+if ($uri === '/diagnostic') {
+    chdir($appRoot);
+    include $appRoot . '/diagnostic.php';
+    exit;
+}
+
 $appRoot = __DIR__;
 
 // For now, always serve the simple page to avoid 502 errors
